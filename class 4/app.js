@@ -14,7 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //connect DB
-// const baseUri ="mongodb+srv://admin:admin01@cluster0.laad0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const baseUri = process.env.MONGODB_CREDENTIAL;
 mongoose.connect(baseUri);
 mongoose.connection.on("connected", () => console.log("mongoDB connected"));
